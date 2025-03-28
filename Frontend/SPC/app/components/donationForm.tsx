@@ -1,6 +1,4 @@
 import { useState } from "react";
-import Navbar from "~/components/navbar";
-import Footer from "~/components/footer";
 
 export default function DonationForm({ name }: { name: string }) {
   const [formData, setFormData] = useState({

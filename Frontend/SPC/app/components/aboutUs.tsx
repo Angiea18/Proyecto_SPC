@@ -1,10 +1,6 @@
-import Navbar from "./navbar";
-import Footer from "./footer";
-
 export default function AboutUs() {
   return (
     <>
-      <Navbar />
       <div className="relative">
         <div className="absolute inset-0 bg-[#FFFFFF]"></div>
         <div className="hero-content flex-col lg:flex-row">
@@ -50,7 +46,6 @@ export default function AboutUs() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

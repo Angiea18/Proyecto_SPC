@@ -2,8 +2,6 @@ import { useState } from "react";
 import { Link } from "@remix-run/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
-import Navbar from "../components/navbar";
-import Footer from "../components/footer";
 
 export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
@@ -33,7 +31,6 @@ export default function Login() {
 
   return (
     <>
-      <Navbar />
       <div className="min-h-screen flex items-center justify-center bg-white px-4 pt-24">
         <div className="w-full max-w-4xl flex flex-col lg:flex-row bg-white shadow-none rounded-lg overflow-hidden">
           <div className="w-full lg:w-2/3 flex flex-col justify-center p-8">
@@ -127,7 +124,6 @@ export default function Login() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   );
 }

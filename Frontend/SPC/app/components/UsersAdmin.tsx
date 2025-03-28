@@ -1,22 +1,9 @@
 import { useEffect, useState } from "react";
-import {
-  getUser,
-  getHistorial,
-  updateUser,
-  toggleEnabled,
-} from "../services/UserService";
+import { getUser, updateUser, toggleEnabled } from "../services/UserService";
 import { User } from "../interfaces/UserInterface";
-
-interface History {
-  id: number;
-  usuarioCorreo: string;
-  accion: string;
-  fecha: string;
-}
 
 export default function UsersAdmin() {
   const [users, setUsers] = useState<User[]>([]);
-  const [history, setHistory] = useState<History[]>([]);
   const [searchEmail, setSearchEmail] = useState("");
   const [searchDocument, setSearchDocument] = useState<number | "">("");
   const [userFound, setUserFound] = useState<User | null>(null);
@@ -26,8 +13,6 @@ export default function UsersAdmin() {
       try {
         const usersData = await getUser();
         setUsers(usersData);
-        const historyData = await getHistorial();
-        setHistory(historyData);
       } catch (error) {
         console.error("Error al cargar datos", error);
       }
@@ -156,21 +141,6 @@ export default function UsersAdmin() {
           </button>
         </div>
       )}
-
-      <h3 className="text-2xl font-bold text-[#002847] mt-6 mb-4">
-        Historial de Acciones
-      </h3>
-      <div className="border border-[#002847] rounded-md p-4 text-black">
-        {history.length > 0 ? (
-          history.map((h) => (
-            <p key={h.id} className="mb-2">
-              {h.fecha} - <b>{h.usuarioCorreo}</b>: {h.accion}
-            </p>
-          ))
-        ) : (
-          <p>⚠ No hay registros aún.</p>
-        )}
-      </div>
     </div>
   );
 }
