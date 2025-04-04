@@ -61,7 +61,7 @@ export default function Navbar() {
               <ul className="p-2 bg-[#618EB4] text-white rounded-md font-[Be Vietnam Pro] font-bold">
                 <li>
                   <Link
-                   to="/listBooks">Libros</Link
+                   to="/listBooks">Libros</Link>
                 </li>
                 <li>
                   <Link to="#">Audiolibros</Link>
